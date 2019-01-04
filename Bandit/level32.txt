@@ -1,0 +1,83 @@
+bandit31@bandit:~$ ls
+bandit31@bandit:~$ cd `mktemp -d`
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO$ ls
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO$ git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
+Cloning into 'repo'...
+Could not create directory '/home/bandit31/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit31/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit31-git@localhost's password: 
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (4/4), done.
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO$ ls
+repo
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO$ cd repo
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO/repo$ ls
+README.md
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO/repo$ cat README.md
+This time your task is to push a file to the remote repository.
+
+Details:
+    File name: key.txt
+    Content: 'May I come in?'
+    Branch: master
+
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO/repo$ echo "May I come in?" >> key.txt
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO/repo$ ls
+key.txt  README.md
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO/repo$ cat key.txt
+May I come in?
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO/repo$ git add -f key.txt
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO/repo$ git commit -m key.txt
+[master 75af274] key.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 key.txt
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO/repo$ git low
+git: 'low' is not a git command. See 'git --help'.
+
+Did you mean this?
+        log
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO/repo$ git log
+commit 75af2749d28a3f6987e0f7e50c3f1298849d9d1b
+Author: bandit31 <bandit31@overthewire.org>
+Date:   Thu Oct 4 19:19:59 2018 +0200
+
+    key.txt
+
+commit d22a3a84cd7e5f8e61bcdd2db612a32959854197
+Author: Ben Dover <noone@overthewire.org>
+Date:   Sun Sep 30 19:48:59 2018 +0200
+
+    initial commit
+bandit31@bandit:/tmp/tmp.xcJ55wQXyO/repo$ git push origin master
+Could not create directory '/home/bandit31/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit31/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit31-git@localhost's password: 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 320 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: ### Attempting to validate files... ####
+remote: 
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote: 
+remote: Well done! Here is the password for the next level:
+remote: 56a9bf19c63d650ce78e6ec0354ee45e
+remote: 
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote: 
+To ssh://localhost/home/bandit31-git/repo
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'ssh://bandit31-git@localhost/home/bandit31-git/repo'

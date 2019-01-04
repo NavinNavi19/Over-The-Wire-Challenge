@@ -1,0 +1,14 @@
+bandit3@bandit:~$ ls
+inhere
+bandit3@bandit:~$ cat inhere
+cat: inhere: Is a directory
+bandit3@bandit:~$ cd inhere
+bandit3@bandit:~/inhere$ ls
+bandit3@bandit:~/inhere$ 
+bandit3@bandit:~/inhere$ ls -la
+total 12
+drwxr-xr-x 2 root    root    4096 Sep 23 21:10 .
+drwxr-xr-x 3 root    root    4096 Sep 23 21:10 ..
+-rw-r----- 1 bandit4 bandit3   33 Sep 23 21:10 .hidden
+bandit3@bandit:~/inhere$ cat .hidden
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB

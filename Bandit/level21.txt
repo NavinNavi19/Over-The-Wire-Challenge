@@ -1,0 +1,19 @@
+bandit20@bandit:~$ ls  -l
+total 16
+-rwsr-x--- 1 bandit21 bandit20 12292 Sep 30 19:48 suconnect
+bandit20@bandit:~$ ./suconnect
+Usage: ./suconnect <portnumber>
+This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
+
+bandit20@bandit:~$ ncat -nlvp 6969 < /etc/bandit_pass/bandit20
+Ncat: Version 7.40 ( https://nmap.org/ncat )
+Ncat: Listening on :::6969
+Ncat: Listening on 0.0.0.0:6969
+Ncat: Connection from 127.0.0.1.
+Ncat: Connection from 127.0.0.1:59196.
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+
+bandit20@bandit:~$ ./suconnect 6969
+Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+Password matches, sending next password

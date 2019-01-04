@@ -1,0 +1,14 @@
+bandit5@bandit:~/inhere$ find . -type f -size 1033c ! -executable
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+
+bandit5@bandit:~/inhere$ find . -type f -readable ! -executable -size 1033c
+./maybehere07/.file2
+
+bandit5@bandit:~/inhere$ du -ab | grep 1033
+1033    ./maybehere07/.file2        
+
+bandit5@bandit:~/inhere$ find ./ -size 1033c
+./maybehere07/.file2

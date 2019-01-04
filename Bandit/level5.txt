@@ -1,0 +1,21 @@
+bandit4@bandit:~/inhere$ cat ./file00
+cat: ./file00: No such file or directory
+bandit4@bandit:~/inhere$ cat ./-file00
+ѠъeIS䐩l)andit4@bandit:~/inhere$ cat ./-file01
+        aee*]2vqs+ZA>bandit4@bandit:~/inhere$ cat ./-file02
+Sec6!RȱOo
+         ụbandit4@bandit:~/inhere$ cat ./-file03
+CΡ}m{:?9)andit4@bandit:~/inhere$ cat ./-file04
+a       ]HqVDzoOHandit4@bandit:~/inhere$ cat ./-file05
+RAޏ:
+m<ʎBSbandit4@bandit:~/inhere$ cat ./-file06
+
+
+
+)gqh=ye$>ybandit4@bandit:~/inhere$ cat ./-file07
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+
+
+bandit4@bandit:~/inhere$ cat ./-file08
+_x).Uf4kM)[?"Hٴ%bandit4@bandit:~/inhere$ cat ./-file09

@@ -1,0 +1,10 @@
+bandit17@bandit:~$ ls
+passwords.new  passwords.old
+bandit17@bandit:~$ file *
+passwords.new: ASCII text
+passwords.old: ASCII text
+bandit17@bandit:~$ diff passwords.new passwords.old
+42c42
+< kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+---
+> zrCgileyjI9fDd4MkUAa5uNiSb1Xwxyn
